@@ -1,0 +1,54 @@
+create book 
+
+
+class Library:
+    def _init_(self):
+        self.books = []  
+
+    def add_book(self, book):
+      
+        self.books.append(book)
+
+    def remove_book(self, book):
+        
+        
+        if book in self.books:
+            self.books.remove(book)
+            print(f"'{book}' has been removed from the library.")
+        else:
+            print(f"'{book}' not found in the library.")
+
+    def list_books(self):
+       
+        if self.books:
+            print("Books in the library:")
+            for book in self.books:
+                print(f"- {book}")
+        else:
+            print("No books in the library.")
+
+
+if _name_ == "_main_":
+    library = Library()
+
+    while True:
+        action = input("Choose an action: add, remove, list, or quit: ").strip().lower()
+
+        if action == "add":
+            book_title = input("Enter the book title to add: ")
+            library.add_book(book_title)
+            print(f"'{book_title}' has been added to the library.")
+
+        elif action == "remove":
+            book_title = input("Enter the book title to remove: ")
+            library.remove_book(book_title)
+
+        elif action == "list":
+            library.list_books()
+
+        elif action == "quit":
+            print("Exiting the library management system.")
+            break
+
+        else:
+            print("Invalid action. Please choose add, remove, list, or quit.")
