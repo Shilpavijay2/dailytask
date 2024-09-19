@@ -1,0 +1,46 @@
+Create Student
+
+class Student:
+    def _init_(self, name):
+        self.name = name
+        self.grades = []
+
+    def add_grade(self, grade):
+
+        if isinstance(grade, int):
+
+            self.grades.append(grade)
+        else:
+            print("Please enter a valid integer grade.")
+
+    def get_average(self):
+
+        if self.grades:
+            return sum(self.grades) / len(self.grades)
+        return 0
+
+
+    def get_grades(self):
+
+        return self.grades
+
+
+if _name_ == "_main_":
+
+
+    student_name = input("Enter the student's name: ")
+    student = Student(student_name)
+
+
+
+    while True:
+        grade_input = input("Enter a grade (or type 'done' to finish): ")
+        if grade_input.lower() == 'done':
+            break
+        try:
+            grade = int(grade_input)
+            student.add_grade(grade)
+        except ValueError:
+            print("Invalid input. Please enter an integer grade.")
+    print("Grades:", student.get_grades())
+    print("Average Grade:", student.get_average())
