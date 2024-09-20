@@ -1,0 +1,20 @@
+for statement
+
+
+using System;
+public class HelloWorld 
+{
+public  static void Main() 
+  {
+      for(int i=1; i<=10; i++)
+      {
+         Console.WriteLine(i);
+         if(i == 5)
+         break;
+          
+      }
+  
+        Console.WriteLine("After the loop");
+        Console.ReadLine();
+  }
+}
