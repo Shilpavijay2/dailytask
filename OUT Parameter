@@ -1,0 +1,22 @@
+OUT Parameter 
+
+
+using System;
+class HelloWorld 
+{
+    public void m1(out int i )
+    {
+        i = 5;
+        i = i + 10;
+    }
+    public static void Main(String[] args) 
+    {
+        int i = 6;
+        HelloWorld h12 = new HelloWorld();
+        Console.WriteLine("Hello World:" + i);
+        h12.m1(out i);
+        Console.WriteLine("After world:" + i);
+        Console.ReadLine();
+        
+    }
+}
